@@ -1,0 +1,137 @@
+#homeContainer {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  height: 100vh;
+
+  font-family: 'Roboto', sans-serif;
+  
+  #illustration {
+    background-color: #835AFD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    padding: 10%;
+    
+    img {
+      max-width: 320px;
+    }
+    
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.6em;
+      color: #FFF;
+    }
+    
+    p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.6rem;
+      color: #FFF;
+    }
+  }
+
+  #mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+  }
+  
+  #createRoomBtn {
+    margin-top: 64px;
+    height: 50px;
+    
+    border: none;
+    border-radius: 8px;
+    
+    background-color: #EA4335;
+    
+    color: #FFF;
+    font-weight: 500;
+    font-size: 1rem;
+    
+    transition: filter .2s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      filter: brightness(0.9);
+      cursor: pointer;
+    }
+
+    > img {
+      margin-right: 10px;
+    }
+  }
+  
+  #mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    
+    padding: 10px;
+    
+    max-width: 320px;
+    
+    > img {
+      align-self: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: #434343;
+      margin: 40px auto 20px;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 1rem;
+      border: 1px solid #9191A1;
+      outline: none;
+      
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #737380;
+
+      a {
+        color: #E559F9;
+      }
+    }
+    
+    #separator {
+      margin: 20px auto;
+      color: #9191A1;
+      
+      display: flex;
+      align-items: center;
+      
+      &::before {
+        content: '';
+        width: 50px;
+        height: 1px;
+        margin-right: 10px;
+        background-color: #9191a1;
+      }
+  
+      &::after {
+        content: '';
+        width: 50px;
+        height: 1px;
+        margin-left: 10px;
+        background-color: #9191A1;
+      }
+    }
+
+  }
+
+}
