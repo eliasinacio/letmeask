@@ -15,7 +15,6 @@ export function Home () {
   const history = useHistory();
   const { user, signInWithGoogle } = useContext(AuthContext);
 
-
   async function handleCreateRoom() {
     if (!user) {
       await signInWithGoogle();
@@ -23,7 +22,7 @@ export function Home () {
   
     history.push('/rooms/new');
   }
-
+  
   return (
     <div id="homeContainer">
       <aside id="illustration">
