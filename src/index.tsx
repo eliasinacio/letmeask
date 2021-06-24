@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import './styles/index.scss';
+import './styles/global.scss';
 
-import "./services/firebase";
-
-ReactDOM.render(
-  <React.StrictMode>
+ReactDOM.render( 
+  // Strict mode monitora seus componentes filhos 
+  <React.StrictMode> 
     <App />
   </React.StrictMode>,
   document.getElementById('root')

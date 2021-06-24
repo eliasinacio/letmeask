@@ -1,7 +1,7 @@
 #homeContainer {
   display: grid;
   grid-template-columns: 5fr 6fr;
-  height: 100vh;
+  min-height: 100vh;
 
   font-family: 'Roboto', sans-serif;
   
