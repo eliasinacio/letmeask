@@ -1,7 +1,12 @@
 # letmeask
-## Built during the NextLevelWeek - Together at Rocketseat 
+Desenvolvido durante a NextLevelWeek Together da Rocketseat 
 
-Technologies: 
-- React (Typescript)
-- Firebase
+## Aprendizados: 
+- React (rotas, Context, Hooks, SideEffects)
+- (Typescript)
+- Serviço de banco de dados do Firebase
+- Autenticação com Google Account
 - Sass
+
+### A milha extra 
+#### Responsividade
