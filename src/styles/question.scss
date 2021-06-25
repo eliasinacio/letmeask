@@ -8,6 +8,17 @@
   background-color: #FEFEFE;
   box-shadow: 0 2px 12px #00000033;
 
+  &.highlighted {
+    background-color: #FEFEFE;
+    border: 1px solid #7A60C8;
+    transform: scale(1.1);
+  }
+  
+  &.answered {
+    background-color: #00000033;
+    border: 1px solid #434343;
+  }
+
   p {
     text-align: start;
   }
@@ -36,6 +47,8 @@
   }
 
   .buttons {
+    display: flex;
+    gap: 16px;
     
     button {
       display: flex;

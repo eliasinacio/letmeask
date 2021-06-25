@@ -38,9 +38,14 @@ export function Home () {
 
     if(roomRef.val().closedAt) {
       alert('Room already closed')
+      return;
     }
 
-    history.push(`rooms/${roomCode}`)    
+    if (roomRef.val().authorId === user?.id) {
+      history.replace('/admin/');
+    }
+
+    history.push(`rooms/${roomCode}`);
   }
 
   return (

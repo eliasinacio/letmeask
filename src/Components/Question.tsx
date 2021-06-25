@@ -9,13 +9,21 @@ type QuestionProps = {
   }
   isLiked?: boolean;
   children?: ReactNode;
-} 
+  isHighlighted: boolean;
+  isAnswered: boolean; 
+}
 
 export function Question(props: QuestionProps) {
-  const { content, author, children } = props;
+  const { 
+    content, 
+    author, 
+    children, 
+    isHighlighted = false, 
+    isAnswered = false 
+  } = props;
 
   return (
-    <div className="question">
+    <div className={`question ${ isAnswered ? 'answered' : '' } ${ (isHighlighted && !isAnswered) ? 'highlighted' : '' }`}>
       <p>{content}</p>
 
       <footer>

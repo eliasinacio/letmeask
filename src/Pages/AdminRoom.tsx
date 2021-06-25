@@ -2,6 +2,8 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg'
 import deleteImg from '../assets/images/delete.svg'
+import checkImg from '../assets/images/check.svg'
+import answerImg from '../assets/images/answer.svg'
 import '../styles/room.scss'
 
 import { RoomCode } from '../Components/RoomCode';
@@ -9,7 +11,6 @@ import { Button } from '../Components/Button';
 import { Question } from '../Components/Question';
 
 // import { database } from '../services/firebase';
-// import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
@@ -18,6 +19,7 @@ type RoomParams = {
 }
 
 export function AdminRoom () {
+
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
@@ -25,7 +27,7 @@ export function AdminRoom () {
   const { title, questions } = useRoom(roomId);
 
   async function handleEndRoom (roomID: string) {
-    if (window.confirm('Deseja mesmo remover esta pergunta?')) {
+    if (window.confirm('Deseja mesmo remover esta Sala?')) {
       await database.ref(`rooms/${roomId}`).update({
         closedAt: new Date(),
       });
@@ -40,11 +42,27 @@ export function AdminRoom () {
     }
   }
 
+  async function handleCheckQuestion (questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isAnswered: true,
+    })
+  }
+
+  async function handleAnswerQuestion (questionId: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isHighlighted: true,
+    })
+  }
+
+  const handleBackToHome = () => {
+    history.replace('/');
+  }
+
   return (
     <div id="pageRoom">
       <header>
         <div className="header-content admin">
-          <img src={logoImg} alt="Logo escrito Letmeask"/>
+          <img src={logoImg} onClick={ handleBackToHome } alt="Logo escrito Letmeask"/>
           <div className="admin-header-buttons">
             <RoomCode code={roomId}/>
             <Button isOutlined onClick={() => handleEndRoom(roomId)}>Encerrar sala</Button>
@@ -65,8 +83,31 @@ export function AdminRoom () {
                 key={question.id}
                 content={question.content} 
                 author={question.author}
+                isAnswered={question.isAnswered}
+                isHighlighted={question.isHighlighted}
               >
+                {!question.isAnswered && (
+                  <> {/* Fragment */}
+                    <button
+                      className={`check-button`}
+                      type='button'
+                      onClick={() => handleCheckQuestion(question.id)}
+                    >
+                      <img src={checkImg} alt="Marcar pergunta como respondida." />
+                    </button>
+                
+                    <button
+                      className={`answer-button`}
+                      type='button'
+                      onClick={() => handleAnswerQuestion(question.id)}
+                    >
+                      <img src={answerImg} alt="Reposnder/destacar pergunta" />
+                    </button>
+                  </>  
+                )}
+
                 <button
+                  className={`delete-button`}
                   type='button'
                   onClick={() => handleDeleteQuestion(question.id)}
                 >
