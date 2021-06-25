@@ -1,0 +1,63 @@
+.question {
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  @media (max-width: 800px) { margin: 20px 20px; }
+
+  background-color: #FEFEFE;
+  box-shadow: 0 2px 12px #00000033;
+
+  p {
+    text-align: start;
+  }
+
+  footer {
+    margin-top: 20px;
+  
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .auth-info {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 32px;
+      height: 32px;
+
+      border-radius: 50%;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  .buttons {
+    
+    button {
+      display: flex;
+      align-items: flex-end;
+      gap: 5px;
+
+      border: none;
+      cursor: pointer;
+      background-color: transparent; 
+      
+      color: #7A60C8;
+      font-size: 1rem;
+      
+      &.liked {
+        svg path {
+          stroke: #7A60C8;
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}

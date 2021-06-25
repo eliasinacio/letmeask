@@ -2,7 +2,7 @@
   height: 48px;
   display: flex;
 
-  border: 1px solid #816bc5;
+  border: 1px solid #7A60C8;
   border-radius: 12px;
   padding: 0;
   background-color: #d3cdde;
@@ -13,14 +13,16 @@
   div {
     display: flex;
     padding: 0 14px;
-    background-color: #816bc5;
+    background-color: #7A60C8;
   }
 
   span {
+    height: 100%;
     padding: 14px;
+
     text-align: center;
     
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500; 
   }
 }

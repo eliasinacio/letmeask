@@ -40,6 +40,7 @@ export function AuthContextProvider ({children}: AuthContextProviderProps) {
 
     return () => {
       unsibscribe();
+      // expira o listener caso não esteja mais usando, saia da sala ou algo assim
     }
   }, [])
 
