@@ -1,5 +1,4 @@
 .roomCode {
-  height: 48px;
   display: flex;
 
   border: 1px solid #7A60C8;
@@ -18,7 +17,7 @@
 
   span {
     height: 100%;
-    padding: 7px 14px;
+    padding: 14px;
     @media (max-width: 500px) { padding: 14px; }
 
     text-align: center;

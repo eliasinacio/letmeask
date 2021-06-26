@@ -34,10 +34,10 @@ export function useRoom (roomId: string) {
   const [ title, setTitle ] = useState('');
 
   useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomId}`);
+    let roomRef = database.ref(`rooms/${roomId}`);
     
     roomRef.on('value', room => {
-      const databaseRoom = room.val();
+      const databaseRoom = room.val() ?? {};
       const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {}; 
       
       // o retorno do fibase é em objeto e isso transforma em array

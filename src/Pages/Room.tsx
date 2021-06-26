@@ -28,6 +28,16 @@ export function Room () {
 
   const history = useHistory();
 
+  async function verifyRoom () {
+    const room = await database.ref(`rooms`).get();
+    
+    if (!room.child(`${roomId}`).exists()) {
+      history.replace('/notfound');
+    }
+  }
+
+  verifyRoom();
+
   function handleBackHome () {
     history.replace('/');
   }

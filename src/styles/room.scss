@@ -68,6 +68,8 @@
     }
 
     form {
+      padding: 10px;
+
       textarea {
         width: 100%;
         min-height: 128px;
@@ -81,13 +83,12 @@
 
         background-color: #FEFEFE;
 
-        @media (max-width: 800px) { 
-          margin: 10px;
-          width: 90%;
+        @media (max-width: 800px) {
+          width: 100%;
         }
       }
 
-      #form-footer, #form-footer {
+      #form-footer {
         margin-top: 16px;
         display: flex;
         align-items: center;
