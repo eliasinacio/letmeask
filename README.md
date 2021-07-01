@@ -10,7 +10,7 @@
 
 <main>
   <h2  align='center'>O que é</h2>
-  <p  align='center'>Desenvolvido durante a NextLevelWeek Together da Rocketseat o letmeask consiste em um site onde podem ser criadas salas com códigos únicos e, nessas salas, após logados os usuários podem mandar perguntas e curtir perguntas já existentes. O administrador da sala (Quem a criou) pode destacaar essas perguntas, marcá-las como já respondidas e apagá-las. Todas as aleterções são atualizadas em tempo real para todos os participantes da sala.
+  <p  align='center'>Desenvolvido durante a NextLevelWeek Together da Rocketseat o letmeask consiste em um site onde podem ser criadas salas com códigos únicos e, nessas salas, após logados os usuários podem mandar perguntas e curtir perguntas já existentes. O administrador da sala (Quem a criou) pode destacaar essas perguntas, marcá-las como já respondidas e apagá-las. Todas as alterações são atualizadas em tempo real para todos os participantes da sala.
   </p>
   
   <h3 align='center'>Tecnologias usadas</h3>
